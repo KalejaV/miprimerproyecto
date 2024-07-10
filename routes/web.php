@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
+
+//CRUD de productos
+Route::resource('productos', ProductoController::class); //crear 7 rutas para el CRUD
+
+
+//Route::view('/contacto', 'contacto');
